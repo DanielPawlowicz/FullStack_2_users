@@ -2,8 +2,34 @@ import React from 'react'
 
 export default function AddUser() {
   return (
-    <div>
-        Add user Form
+    <div className='container'>
+        <div className='row'>
+            <div className='col-md-6 offset-md-3 border rounded p-4 mt-2'>
+                <h2 className='text-center m-4'>Register User</h2>
+                <div className='mb-3'>
+                    <label htmlFor='Name' className='form-label'>
+                        Name
+                    </label>
+                    <input type={"text"} className='form-control' placeholder='Enter your name' name="name"/>
+                </div>
+                <div className='mb-3'>
+                    <label htmlFor='Username' className='form-label'>
+                        Username
+                    </label>
+                    <input type={"text"} className='form-control' placeholder='Enter your username' name="username"/>
+                </div>
+                <div className='mb-3'>
+                    <label htmlFor='Email' className='form-label'>
+                        Email
+                    </label>
+                    <input type={"text"} className='form-control' placeholder='Enter your email' name="email"/>
+                </div>
+
+                <button type="submit" className='btn btn-primary'>Submit</button>
+                <button type="reset" className='btn btn-outline-danger mx-2'>Cancel</button>
+
+            </div>
+        </div>
     </div>
   )
 }
