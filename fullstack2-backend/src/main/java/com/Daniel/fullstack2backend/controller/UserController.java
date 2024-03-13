@@ -1,5 +1,6 @@
 package com.Daniel.fullstack2backend.controller;
 
+import com.Daniel.fullstack2backend.controller.exception.UserNotFoundException;
 import com.Daniel.fullstack2backend.model.User;
 import com.Daniel.fullstack2backend.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,12 @@ public class UserController {
     @GetMapping("/users")
     List<User> getAllUsers(){
         return userRepository.findAll();
+    }
+
+    @GetMapping("/user/{id}")
+    User getUserById(@PathVariable Long id){
+        return userRepository.findById(id)
+                .orElseThrow(()->new UserNotFoundException(id));
     }
 
 }
